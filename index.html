@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel超链接提取工具 - 全面提取Excel文件中的所有类型超链接</title>
+    <meta name="description" content="Excel超链接提取工具可以全面提取Excel文件中的所有类型超链接，支持导出为TXT或Excel格式，提高数据处理效率。">
+    <meta name="keywords" content="Excel超链接提取,Excel工具,链接导出,数据提取,办公效率,超链接导出">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap">
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>">
+    <!-- 百度统计代码 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?83dd6f257f654ebb92e9dd8c182d5f3a";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="../index.html" class="logo-link">
+                    <div class="logo">
+                        <i class="fas fa-cat"></i>
+                    </div>
+                    <h1>Excel超链接提取工具</h1>
+                </a>
+            </div>
+            <p class="subtitle">全面提取Excel文件中的所有类型超链接</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <div class="upload-area" id="dropArea">
+                    <img src="img/upload-icon.svg" alt="上传" class="upload-icon">
+                    <p>拖放Excel文件到这里或</p>
+                    <label for="fileInput" class="upload-button">选择文件</label>
+                    <input type="file" id="fileInput" accept=".xlsx, .xls" hidden>
+                    <p class="file-info" id="fileInfo"></p>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2>提取的链接</h2>
+                    <div class="export-buttons">
+                        <button id="exportTxt" class="export-button">导出为TXT</button>
+                        <button id="exportExcel" class="export-button">导出为Excel</button>
+                    </div>
+                </div>
+                <div class="results-container">
+                    <table id="linksTable">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>链接文本</th>
+                                <th>URL</th>
+                                <th>工作表</th>
+                                <th>单元格</th>
+                            </tr>
+                        </thead>
+                        <tbody id="linksTableBody">
+                            <!-- 链接将在这里动态添加 -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="spinner"></div>
+                <p>正在处理文件，请稍候...</p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="../index.html" class="logo-link">
+                        <i class="fas fa-cat"></i>
+                        <span>微猫工具网</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="../excelone/index.html">Excel超链接提取工具</a>
+                    <a href="../picture/index.html">图片压缩工具</a>
+                    <a href="../time/index.html">全球国家时间显示工具</a>
+                </div>
+                <div class="footer-info">
+                    <p>© 2025 Excel超链接提取工具 | 创主设计和开发</p>
+                    <p class="footer-icp">
+                        <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">粤ICP备09054139号-2</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
